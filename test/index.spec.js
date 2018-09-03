@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const card = require('../index')
+const card = require('../index');
 
 describe('Card', function() {
   describe('#cardValidator', function() {
@@ -16,7 +16,7 @@ describe('Card', function() {
         expect(badFn).to.throw(Error);
       });
     });
-    describe('Quando houver apenas um digito', function(){
+    describe('Quando houver menos de 10 digitos', function(){
       it('deve lançar um erro', function(){
         var badFn = function () { card.cardValidator(1234); };
         expect(badFn).to.throw(Error);
@@ -24,7 +24,7 @@ describe('Card', function() {
     });
     describe('Quando o numero for valido', function(){
       it('retornar true', function(){
-        expect(card.cardValidator(541187103745124)).to.be.true;
+        expect(card.cardValidator(5555666677778884)).to.be.true;
       });
     });
     describe('Quando o numero for invalido', function(){

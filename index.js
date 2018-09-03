@@ -1,12 +1,3 @@
-
-//     var size = array.length;
-//     var lastPosition = size - 1;
-//     var newArray = [];
-// for (var i = lastPosition; i >= 0; i--){
-//   newArray.push(parseInt(array[i]));
-// }
-//console.log(newArray);
-
 function cardValidator (credNumber){
   if (!credNumber){
     throw new Error("Não tem nada no parametro");
@@ -17,18 +8,22 @@ function cardValidator (credNumber){
   if (credNumber.toString().length<10){
     throw new Error("Quantidade de numeros menor que o esperado");
   }
-  var array = credNumber.toString().split('').reverse;
-  var onlyOdd = 0;
+
+  var array = credNumber.toString().split('').reverse();
+
   var totalSum = 0;
+
   for (var i = 0; i < array.length; i++){
     if (i % 2 === 1){
-      onlyOdd = array[i]*2;
-      array[i] = parseInt(onlyOdd / 10) + onlyOdd % 10;
-    }//console.log(onlyOdd);
+      var onlyOdd = parseInt(array[i])*2;
+      if (onlyOdd >= 10){
+        totalSum += parseInt(onlyOdd / 10) + (onlyOdd % 10);
+      }
+    }else {
+      totalSum += parseInt(array[i]);
+    }
   }
-  for (var j = 0; j < array.length; j++) {
-    totalSum += array[j];
-  }
+
   if (totalSum %10 === 0){
     return true;
   }else{
@@ -37,6 +32,9 @@ function cardValidator (credNumber){
 }
 
 module.exports.cardValidator = cardValidator;
+
+
+
 // function isValidCard (newArray){
 // var onlyOdd = 0;
 // var totalSum = 0;

@@ -1,0 +1,23 @@
+{
+  "name": "biblioteca-cardvalidator",
+  "version": "1.0.0",
+  "description": "Biclioteca para validar cartão de crédito",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianaAugusta/biblioteca-cardValidator.git"
+  },
+  "author": "JulianaAugusta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulianaAugusta/biblioteca-cardValidator/issues"
+  },
+  "homepage": "https://github.com/JulianaAugusta/biblioteca-cardValidator#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  }
+}

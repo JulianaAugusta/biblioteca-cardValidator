@@ -1,10 +1,4 @@
-var credNumber = prompt ("Insira o número do seu cartão de crédito");
-//console.log(credNumber);
-  if (credNumber === '' || isNaN(credNumber) || credNumber === ' ' ){
-    alert("Digite apenas números no campo fornecido.");
-  }else{
-    var array = credNumber.split('').reverse;
-  console.log(array);
+
 //     var size = array.length;
 //     var lastPosition = size - 1;
 //     var newArray = [];
@@ -13,9 +7,19 @@ var credNumber = prompt ("Insira o número do seu cartão de crédito");
 // }
 //console.log(newArray);
 
-function isValidCard (array){
-var onlyOdd = 0;
-var totalSum = 0;
+function cardValidator (credNumber){
+  if (!credNumber){
+    throw new Error("Não tem nada no parametro");
+  }
+  if (typeof credNumber === "string"){
+    throw new Error("Esse tem uma string");
+  }
+  if (credNumber.toString().length<10){
+    throw new Error("Quantidade de numeros menor que o esperado");
+  }
+  var array = credNumber.toString().split('').reverse;
+  var onlyOdd = 0;
+  var totalSum = 0;
   for (var i = 0; i < array.length; i++){
     if (i % 2 === 1){
       onlyOdd = array[i]*2;
@@ -25,15 +29,14 @@ var totalSum = 0;
   for (var j = 0; j < array.length; j++) {
     totalSum += array[j];
   }
-    if (totalSum %10 === 0){
-      document.write ('Seu cartão é Válido');
-    }else{
-      document.write ('Seu cartão é Inválido');
-    }
+  if (totalSum %10 === 0){
+    return true;
+  }else{
+    return false;
   }
-  isValidCard (array);
 }
 
+module.exports.cardValidator = cardValidator;
 // function isValidCard (newArray){
 // var onlyOdd = 0;
 // var totalSum = 0;

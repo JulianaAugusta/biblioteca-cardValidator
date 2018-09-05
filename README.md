@@ -33,6 +33,6 @@ $node
 
 -   Retorna um booleano caso o número seja válido (true) e se for inválido (false)
 
-#### )versão 1.0.2 (previsão outubro/2018)
+#### versão 1.0.2 (previsão outubro/2018)
 
 -  README translated to english;

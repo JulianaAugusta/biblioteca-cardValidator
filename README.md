@@ -23,7 +23,7 @@ $node
 
 ## Instalação
 -   você deverá ter o node + npm instalados. Para guia de instalação, visite  [o site oficial](https://www.npmjs.com/get-npm).
--   proceda com a instalação com  `$npm install cardValidator`
+-   proceda com a instalação com  `$npm install biblioteca-cardValidator`
 
 ## Roadmap oficial do projeto
 

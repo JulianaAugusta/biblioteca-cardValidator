@@ -10,7 +10,7 @@ Exemplo:
 
 ```
 $node
-> let cardValidate = require("biblioteca_cartao")
+> let cardValidate = require("biblioteca-cardValidator")
 > cardValidate.cardValidator(36490102462661); // true
 ```
 

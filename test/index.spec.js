@@ -24,12 +24,12 @@ describe('Card', function() {
     });
     describe('Quando o numero for valido', function(){
       it('retornar true', function(){
-        expect(card.cardValidator(5555666677778884)).to.be.true;
+        expect(card.cardValidator(5162926370126905)).to.be.true;
       });
     });
     describe('Quando o numero for invalido', function(){
       it('retornar false', function(){
-        expect(card.cardValidator(5555666677778883)).to.be.false;
+        expect(card.cardValidator(111111111111111)).to.be.false;
       });
     });
   });

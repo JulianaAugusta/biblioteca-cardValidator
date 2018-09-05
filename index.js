@@ -7,12 +7,15 @@ function cardValidator (credNumber){
   }
   if (credNumber.toString().length<10){
     throw new Error("Quantidade de numeros menor que o esperado");
-  } else {
-    var sum = 0, even = false;
-    String(credNumber).split("").reverse().forEach(function(dstr){ let d = parseInt(dstr);
-      sum += ((even = !even) ? d : (d < 5) ? d * 2 : (d - 5) * 2 + 1);
+  }
+  else {
+    let sum = 0;
+    let cardTest = String(credNumber).split("").reverse();
+    cardTest.forEach(function (dstr, index) {
+      let d = parseInt(dstr);
+      sum += ((index % 2 === 0) ? d : (d < 5) ? d * 2 : (d - 5) * 2 + 1);
     });
-    return (sum % 10 == 0);
+    return (sum % 10 === 0);
   }
 }
 
